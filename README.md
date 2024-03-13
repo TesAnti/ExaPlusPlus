@@ -75,4 +75,4 @@ exppcli.exe my_code.expp
 to compili specified file once.
 
 # Documentation
-// TODO
+Check our [Wiki](https://github.com/TesAnti/ExaPlusPlus/wiki).
