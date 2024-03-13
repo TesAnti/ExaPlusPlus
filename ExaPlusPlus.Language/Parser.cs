@@ -62,7 +62,7 @@ public class Parser
 
         var res = StatementList();
 
-        return res;
+        return new ProgramStatement(res);
     }
 
     #region Statements

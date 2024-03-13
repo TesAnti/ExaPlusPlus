@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExaPlusPlus", "ExaPlusPlus\ExaPlusPlus.csproj", "{2AA22BE0-E832-47B9-A96C-A6B2613D3D80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExaPlusPlus.CLI", "ExaPlusPlus\ExaPlusPlus.CLI.csproj", "{2AA22BE0-E832-47B9-A96C-A6B2613D3D80}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExaPlusPlus.Language", "ExaPlusPlus.Language\ExaPlusPlus.Language.csproj", "{84DAFFCE-E133-4C33-A025-F070EA6D452F}"
 EndProject

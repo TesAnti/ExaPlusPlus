@@ -21,4 +21,13 @@
     <ProjectReference Include="..\ExaPlusPlus.Language\ExaPlusPlus.Language.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Levels\03_trash_world_news_tutorial.expp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Levels\03_trash_world_news_tutorial.exppc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

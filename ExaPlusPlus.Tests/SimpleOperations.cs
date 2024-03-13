@@ -15,21 +15,15 @@ drop;
             var expected = @"
 GRAB 1
 DROP
-".Replace("\r","");
+";
 
             
-            var result = Compile(input);
+            var result = CompileHelper.Compile(input);
             
             Assert.AreEqual(expected.Trim(), result.Trim());
         }
 
-        private static string Compile(string input)
-        {
-            var parser = new Parser();
-            var result = parser.Parse(input);
-            var compiler = new Compiler();
-            result.Accept(compiler);
-            return compiler.Compilation.ToString();
-        }
+        
+        
     }
 }

@@ -1,0 +1,16 @@
+﻿exa exa1 {
+	link 799;
+	grab 199;
+	send read;
+	send read;
+	delete;
+}
+
+
+link 800;
+spawn exa1;
+make;
+x=recv;
+write recv;
+write x;
+link 800;

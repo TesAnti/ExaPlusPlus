@@ -1,0 +1,5 @@
+link 800;
+grab 200;
+x = (read+read)*read-read;
+write x;
+link 800;

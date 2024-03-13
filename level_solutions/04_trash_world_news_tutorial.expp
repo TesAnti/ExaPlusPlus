@@ -1,0 +1,12 @@
+link 800;
+grab 200;
+x=read;
+delete;
+make;
+while( x >-1) {
+  write x;
+  x=x-1;
+}
+link 800;
+
+
