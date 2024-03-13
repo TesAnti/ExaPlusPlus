@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ExaPlusPlus": {
+      "commandName": "Project",
+      "commandLineArgs": "\"D:\\exp\\Programming language\\ExaPlusPlus\\ExaPlusPlus\\levels\\test.expp\""
+    }
+  }
+}
