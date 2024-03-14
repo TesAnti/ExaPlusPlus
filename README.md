@@ -12,7 +12,7 @@ The goals of the project:
 
 # Features
 - EXA definition syntax
-- loops(forever, foreach, while, until)
+- loops(forever and while)
 - if-else conditions
 - math expressions
 
@@ -75,4 +75,4 @@ exppcli.exe my_code.expp
 to compili specified file once.
 
 # Documentation
-// TODO
+Check our [Wiki](https://github.com/TesAnti/ExaPlusPlus/wiki).
