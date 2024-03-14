@@ -1,0 +1,38 @@
+exa writter{
+    make;
+    x=recv;
+    write x|1;
+    write x|2;
+    write x|3;
+    write recv;
+    link -1,-1;
+
+}
+
+exa stealler{
+    
+    link 800;
+    link -1;
+    kill;
+    link 800;
+    spawn writter;
+    send x; // send unlock code
+
+    // grab a file and send serial number
+    grab 199;
+    send read;
+    drop;        
+}
+
+link 800;
+x=999;
+while(x>0)
+{
+    #pass = x|1;
+    #pass = x|2;
+    #pass = x|3;
+    spawn stealler;
+    x--;
+}
+link 800;
+

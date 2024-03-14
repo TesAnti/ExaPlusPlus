@@ -1,0 +1,32 @@
+exa exa_m{
+    forever{
+        x=#nerv;
+        link 3,3,3,3;
+        #nerv=x;
+        link -3,-3,-3,-3;
+    }
+}
+exa exa_h{
+    forever{
+        link 3,3,3,3,3,3;
+        x=#nerv;
+        link -3,-3,-3,-3,-3,-3;
+        #nerv=x;
+    }
+}
+exa exa_p{
+    forever{
+        link 3,3,3,3,3,3,3,3;
+        x=#nerv;
+        link -3,-3,-3,-3,-3,-3,-3,-3;
+        #nerv=x;
+    }
+}
+
+link 800;
+link -3,-3;
+spawn exa_m;
+link -3;
+spawn exa_h;
+link -3;
+spawn exa_p;

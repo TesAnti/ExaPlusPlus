@@ -1,0 +1,34 @@
+exa copier{
+    make;
+    x=recv;
+    while(x!=-1)
+    {
+        write x;
+        x=recv;
+    }
+    forever link -1;
+}
+
+exa bringer{
+    while(x>100)
+    {
+        link 800;
+        x=x-100;
+    }
+    grab 200+x;
+    spawn copier;
+    while(!eof)send read;
+    send -1;
+    
+}
+
+mode;
+grab 300;
+link 800;
+while(!eof)
+{
+    x=read;
+    spawn bringer;
+}
+delete;
+

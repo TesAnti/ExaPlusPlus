@@ -1,0 +1,56 @@
+exa dialler{
+    grab 301;
+    link 800;
+    
+    while(!eof)
+    {
+        x=recv;
+        #DIAL=-1;
+        while(x>0)
+        {
+            #DIAL=read;
+            x--;
+        }
+        send 0;
+        
+    }
+    delete;
+}
+exa writter{
+    grab 200;
+    x=recv;
+    while(!eof)
+    {
+        write x;
+        seek 1; 
+    }
+    seek -9999;
+    seek 1;
+    x=recv;
+    while(!eof)
+    {
+        write x;
+        seek 1; 
+    }
+    
+
+}
+mode;
+spawn dialler;
+grab 300;
+x=8;
+link 800;
+while(x>0){
+    send 11;
+    wait;
+    link 800;
+    spawn writter;
+    send read;
+    send read;
+    seek -2;
+    link -1;
+    x--;
+}
+delete;
+
+

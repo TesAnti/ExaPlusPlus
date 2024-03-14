@@ -1,0 +1,35 @@
+const N=800;
+const E=801;
+const S=802;
+const W=803;
+const TERMINATE=-9999;
+
+grab 300;
+link 800;
+
+seek 1;
+x=read;
+while(x!=0)
+{
+    link E+(x<0)*2;
+    x--;
+    x=x+(x<0)*2;
+}
+x=read;
+while(x!=0)
+{
+    link N+(x<0)*2;
+    x--;
+    x=x+(x<0)*2;
+}
+seek -9999;
+x=read;
+delete;
+grab 200;
+while(x!=read)seek 5;
+x=read;
+write x;
+write x;
+write x;
+write x;
+delete;
