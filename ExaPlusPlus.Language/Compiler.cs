@@ -93,8 +93,9 @@ public class Compiler
                 case ETokenType.Mod:
                     command = "MODI";
                     break;
-
-
+                case ETokenType.Swiz:
+                    command = "SWIZ";
+                    break;
             }
             
             var first = binaryExpression.left.Accept(this);
@@ -228,13 +229,6 @@ public class Compiler
     public string? Visit(SeekStatement seekStatement)
     {
         var line = $"SEEK {seekStatement.amount.Accept(this)}";
-        Compilation.AppendLine(line);
-        return null;
-    }
-
-    public string? Visit(SwizStatement swizStatement)
-    {
-        var line = $"SWIZ {swizStatement.expression.Accept(this)} {swizStatement.order.Accept(this)}";
         Compilation.AppendLine(line);
         return null;
     }

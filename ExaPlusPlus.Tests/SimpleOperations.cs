@@ -57,10 +57,7 @@ DROP
 
             sb.AppendLine(Compile(@"
 
-exa test{
-  x=1;
-}
-spawn test;
+x=x|1234;
 "));
 
             var result= sb.ToString();

@@ -23,7 +23,8 @@ public record SeekStatement(ASTNode amount) : ASTNode;
 public record MakeStatement() : ASTNode;
 public record WriteStatement(List<ASTNode> data) : ASTNode;
 public record CutStatement():ASTNode;
-public record SwizStatement(ASTNode expression,ASTNode order): ASTNode;
+
+
 public record KillStatement(): ASTNode;
 public record DieStatement(): ASTNode;
 public record IncStatement(Variable expression) : ASTNode;
@@ -114,7 +115,6 @@ public class Parser
         if (_lookahead.Type == ETokenType.While) return WhileStatement();
         if (_lookahead.Type == ETokenType.Seek) return SeekStatement();
         if (_lookahead.Type == ETokenType.Cut) return CutStatement();
-        if (_lookahead.Type == ETokenType.Swiz) return SwizStatement();
         if (_lookahead.Type == ETokenType.Kill) return KillStatement();
         if (_lookahead.Type == ETokenType.Die) return DieStatement();
         if (_lookahead.Type == ETokenType.Mode) return ModeStatement();
@@ -169,14 +169,7 @@ public class Parser
         return new KillStatement();
     }
 
-    public ASTNode SwizStatement()
-    {
-        Consume(ETokenType.Swiz);
-        var expression = CompareExpression();
-        var order = CompareExpression();
-        Consume(ETokenType.Semicolon);
-        return new SwizStatement(expression,order);
-    }
+    
     public ASTNode CutStatement()
     {
         Consume(ETokenType.Cut);
@@ -466,6 +459,8 @@ public class Parser
         return left;
     }
 
+    
+
     public ASTNode ModExpression()
     {
         var left = AdditiveExpression();
@@ -495,8 +490,21 @@ public class Parser
     
     public ASTNode MultiplicativeExpression()
     {
-        var left = UnaryExpression();
+        var left = SwizExpression();
         while (_lookahead.Type == ETokenType.Mul || _lookahead.Type == ETokenType.Div)
+        {
+            var type = _lookahead.Type;
+            Consume(type);
+            var right = UnaryExpression();
+            left = new BinaryExpression(left, type, right);
+        }
+        return left;
+    }
+
+    public ASTNode SwizExpression()
+    {
+        var left = UnaryExpression();
+        while (_lookahead.Type == ETokenType.Swiz)
         {
             var type = _lookahead.Type;
             Consume(type);
@@ -589,6 +597,8 @@ public class Parser
         {
             return new EnvVariable(name);
         }
+
+        
         EVariableType type;
         switch (name)
         {

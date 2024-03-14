@@ -13,6 +13,7 @@ public enum ETokenType
     Dec,
     Mul,
     Div,
+    Swiz,
     CompoundPlus,
     CompoundMinus,
     CompoundMul,
@@ -45,7 +46,6 @@ public enum ETokenType
     Write,
     Seek,
     Cut,
-    Swiz,
     Kill,
     Die,
     Mode,
@@ -68,7 +68,8 @@ public enum ETokenType
     Semicolon,
     Comma,
 
-    Send
+    Send,
+    
 }
 
 public class Tokenizer(string code)
@@ -125,6 +126,7 @@ public class Tokenizer(string code)
         {@"^\-",ETokenType.Minus},
         {@"^\*",ETokenType.Mul},
         {@"^\/",ETokenType.Div},
+        {@"^\|",ETokenType.Swiz},
         {@"^%",ETokenType.Mod},
         {@"^=",ETokenType.Assign},
         
@@ -158,7 +160,6 @@ public class Tokenizer(string code)
         {@"^while\b",ETokenType.While},
         {@"^seek\b",ETokenType.Seek},
         {@"^cut\b",ETokenType.Cut},
-        {@"^swiz\b",ETokenType.Swiz},
         {@"^kill\b",ETokenType.Kill},
         {@"^die\b",ETokenType.Die},
         {@"^mode\b",ETokenType.Mode},
