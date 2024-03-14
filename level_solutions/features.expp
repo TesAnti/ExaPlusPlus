@@ -1,0 +1,34 @@
+// exa definition
+exa test{
+    grab 400;
+    forever{
+      x=read;
+      send x;
+      if (x==1) die;
+    }
+}
+
+// commands similar to EXA Lang
+grab 400;
+link 800;
+drop;
+
+x=10-5-5;
+
+// loops
+forever{
+  x++;
+  // conditions
+  if(x==10){
+    break;
+  }
+}
+
+// spawn exa defined above
+spawn test;
+
+
+
+
+
+

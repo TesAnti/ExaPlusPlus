@@ -1,0 +1,11 @@
+grab 300;
+x=read;
+delete;
+link 800,800;
+
+grab 237;
+while(x!=read);
+seek -1;
+cut;
+
+

@@ -354,7 +354,7 @@ public class Compiler
         return null;
     }
 
-    public string Visit(ModeStatement dieStatement)
+    public string Visit(ModeStatement modeStatement)
     {
         Compilation.AppendLine($"MODE");
         return null;

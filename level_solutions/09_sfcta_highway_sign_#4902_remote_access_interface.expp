@@ -1,0 +1,19 @@
+exa print{
+    forever{
+        x=recv;
+        if(x>27)break;
+        #DATA=x/9;
+        #DATA=x%9;
+        #DATA=recv;
+    }
+}
+grab 300;
+link 800;
+spawn print;
+while(x<27){
+    send x;
+    send read;
+    x=x+1;
+}
+send 9999;
+delete;

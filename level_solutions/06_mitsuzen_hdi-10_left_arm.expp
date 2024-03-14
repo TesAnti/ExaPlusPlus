@@ -1,0 +1,21 @@
+exa exa1{
+    link 1,1,1,1;
+    send 1;
+    forever{
+        
+        #NERV=recv;
+    }
+}
+
+link 800;
+spawn exa1;
+x=recv; // wait for signal
+
+forever{
+
+    x=#NERV;
+    if(x<-120)send -120;
+    else if(x>50)send 50;
+    else send x;
+}
+

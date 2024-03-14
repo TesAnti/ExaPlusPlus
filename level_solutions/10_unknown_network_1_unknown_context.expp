@@ -1,0 +1,33 @@
+exa repL{
+    forever{
+        link 800;
+        x=x-1;
+        if(x>0)
+            spawn repR;
+        else
+            {
+                kill;
+                grab 276;
+                link -1,-1,-1,-1;
+                die;
+            }
+    }
+}
+
+exa repR{
+    forever{
+        link 801;
+        x=x-1;
+        if(x>0)
+            spawn repL;
+        else
+            {
+                kill;
+                grab 276;
+                link -1,-1,-1,-1;
+                die;
+            }
+    }
+}
+x=4;
+spawn repl;

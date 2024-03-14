@@ -1,0 +1,13 @@
+exa dispense{
+    link x;
+    while(#CASH>0)#DISP=20;
+}
+
+link 800,800,800;
+x=800;
+while(x<807) {
+    spawn dispense;
+    x=x+1;
+}
+
+

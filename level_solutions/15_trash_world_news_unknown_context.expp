@@ -1,0 +1,29 @@
+exa to_outbox{
+    grab 200;
+    link 800;
+}
+exa replacer{
+    grab 212;
+    x=recv;
+    while(x!=-1)
+    {
+        while(!eof)
+        {
+            if(read==x){
+                seek -1;
+                write recv;
+            }
+        }
+        seek -9999;
+        x=recv;
+    }
+
+}
+grab 300;
+link 800;
+spawn to_outbox;
+link 799;
+spawn replacer;
+while(!eof)send read;
+delete;
+send -1;

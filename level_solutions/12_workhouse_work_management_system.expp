@@ -1,0 +1,25 @@
+grab 300;
+x= read;
+delete;
+link 800;
+grab 199;
+while(x!=read);
+seek 1;
+x=read;
+drop;
+link 799;
+grab x;
+seek 2;
+x=0;
+while(!eof){
+    x=x+read-75;
+    seek -1;
+    write 75;
+    
+}
+
+while(x>74){
+    write 75;
+    x=x-75;
+}
+write x;

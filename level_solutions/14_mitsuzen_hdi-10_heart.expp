@@ -1,0 +1,30 @@
+exa sa_n{
+    link 1,1;
+    #NERV=40;
+    x=x-1;
+    while(x>0)
+    {
+        #NERV=-70;
+        x=x-1;
+    }
+}
+
+exa av_n{
+    link 3,3;
+    #NERV=-70;
+    #NERV=40;
+    x=x-2;
+    while(x>0)
+    {
+        #NERV=-70;
+        x=x-1;
+    }
+}
+link 800;
+forever{
+    x=#NERV/(-10);
+    spawn sa_n,av_n;
+    
+    while(x>0)x=x-1;
+
+}

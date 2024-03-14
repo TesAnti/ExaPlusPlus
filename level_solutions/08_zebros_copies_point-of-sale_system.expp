@@ -1,0 +1,28 @@
+
+exa date{
+    link 801;
+    send #date;
+}
+exa transactions{
+    grab 201;
+    seek 9999;
+    write recv,x,recv,recv;
+}
+exa account{
+    grab 200;
+    while(x!=read)seek 2;
+    send read,read;
+    seek -2;
+    write 0,0;
+}
+grab 300;
+link 800;
+spawn date;
+x = read;
+spawn account;
+spawn transactions;
+
+
+delete;
+
+

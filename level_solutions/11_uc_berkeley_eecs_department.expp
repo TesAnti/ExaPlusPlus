@@ -1,0 +1,42 @@
+exa reader{
+    grab 200;
+    seek 9999;
+    seek -3;
+    while(read!=x) seek -4;
+    x=read; // offset
+    x=x*100+read;
+    seek -9999;
+    seek x/100;
+    x=x%100;
+    spawn writter;
+    while(x>0){
+        send read;
+        x=x-1;
+    }
+    drop;
+    grab 300;
+    x=read;
+    delete;
+    send x;
+    
+}
+
+exa writter{
+    make;
+    while(x>0)
+    {
+        write recv;
+        x=x-1;
+    }
+    x=recv;
+    while(x!=host)link 800;
+    link-1;
+}
+grab 300;
+link 800;
+x=read;
+seek -1;
+write host;
+while(x!=host) link 800,800;
+x = read; // key
+spawn reader;

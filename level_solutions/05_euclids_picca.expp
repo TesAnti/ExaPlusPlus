@@ -1,0 +1,12 @@
+exa exa1{
+    grab 200;
+    seek 9999;
+    write recv,recv,recv,recv,recv;
+    
+}
+grab 300;
+link 800;
+spawn exa1;
+send read,read,read,read,read;
+
+delete;
