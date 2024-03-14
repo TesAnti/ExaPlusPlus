@@ -12,7 +12,7 @@ The goals of the project:
 
 # Features
 - EXA definition syntax
-- loops(forever, foreach, while, until)
+- loops(forever and while)
 - if-else conditions
 - math expressions
 
