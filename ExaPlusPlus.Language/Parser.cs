@@ -590,17 +590,17 @@ public class Parser
 
     public Variable Variable()
     {
-        var name = Consume(ETokenType.Identifier).Value;
+        var name = Consume(ETokenType.Identifier);
 
 
-        if (name.StartsWith("#"))
+        if (name.Value.StartsWith("#"))
         {
-            return new EnvVariable(name);
+            return new EnvVariable(name.Value);
         }
 
         
         EVariableType type;
-        switch (name)
+        switch (name.Value)
         {
             case "x":
                 type=EVariableType.X;
@@ -618,7 +618,7 @@ public class Parser
                 type = EVariableType.EOF;
                 break;
             default:
-                throw new NotSupportedException();
+                throw new NotSupportedException($"Unknown token `{name.Value}` at {name.Column}:{name.Line}");
         }
         return new Variable(type);
     }
