@@ -654,7 +654,7 @@ public class Parser
     {
         var token = _lookahead;
 
-        if (token.Type != tokenType) throw new Exception($"Unexpected token: {token.Type}");
+        if (token.Type != tokenType) throw new Exception($"Unexpected token: {token.Type} at {token.Column}:{token.Line}");
 
         _lookahead = _tokenizer.NextToken();
         return token;
